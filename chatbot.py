@@ -23,7 +23,10 @@ logger = logging.getLogger("vish-assistant")
 # --------------------------------------------------
 # ENV + CLIENTS
 # --------------------------------------------------
-load_dotenv()
+if os.getenv("RENDER"):
+    pass
+else:
+    load_dotenv()
 
 groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
