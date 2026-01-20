@@ -1,0 +1,271 @@
+{
+  "name": "Vishwanath Rajasekaran",
+  "nickname": "Vish",
+  "location": {
+    "current": "United Kingdom",
+    "origin": "India",
+    "open_to": ["Remote", "Relocation", "Hybrid"],
+    "timezone": "GMT/BST"
+  },
+  "contact": {
+    "email": "vishrajasek@gmail.com",
+    "phone_uk": "+44 7384 089336",
+    "phone_india": "+91 76677 71892",
+    "linkedin": "https://www.linkedin.com/in/vishwanath-rajasekaran/",
+    "github": "https://github.com/Rvishwanath19977"
+  },
+  "current_status": {
+    "role": "Lead Full-Stack AI/ML Engineer",
+    "company": "Smartail UK",
+    "availability": "Open to AI Engineering roles, Research positions, and collaborative projects",
+    "seeking": ["PhD positions in Human-AI Interaction", "Senior AI/ML Engineering roles", "Research collaborations"]
+  },
+  "professional_identity": {
+    "primary_title": "GenAI & Agentic AI Engineer",
+    "secondary_title": "Python Full-Stack Developer",
+    "research_focus": "Human-AI Interaction Researcher",
+    "tagline": "Building intelligent systems with humans at the center",
+    "philosophy": "Technology should elevate humanity, not replace what makes us human"
+  },
+  "background": {
+    "summary": "I am a GenAI and full-stack AI/ML engineer focused on building production-grade intelligent systems. My work combines large language models, retrieval-augmented generation, agentic workflows, and cloud-native deployment, with a strong emphasis on safety, reliability, and human control.",
+    "total_experience_years": 4,
+    "domains_worked": ["Enterprise Software", "Education Technology", "Healthcare AI", "Social Platforms", "Knowledge Management Systems"]
+  },
+  "education": [
+    {
+      "degree": "MSc in Computer Science",
+      "institution": "Coventry University",
+      "location": "United Kingdom",
+      "year": "2023–2024",
+      "focus": ["Artificial Intelligence", "Machine Learning", "Software Engineering"],
+      "dissertation": {
+        "title": "Mental-health prediction platform using machine learning models",
+        "description": "Designed and implemented a full-stack mental-health prediction system integrating machine learning with human-centred interface design. Studied how users interpret, trust, and act on AI predictions in high-sensitivity contexts.",
+        "technologies": ["Python", "Django", "React", "scikit-learn", "MLflow"],
+        "research_contribution": "Foundation for research direction in Human-AI Interaction, demonstrating how interaction design shapes trust and safety in high-stakes AI systems"
+      }
+    },
+    {
+      "degree": "BTech in Information Technology",
+      "institution": "Sri Krishna College of Engineering and Technology",
+      "location": "India",
+      "focus": ["Computer Science Fundamentals", "Software Development", "Database Systems"]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Lead Full-Stack AI/ML Engineer",
+      "company": "Smartail UK",
+      "period": "2024 – Present",
+      "type": "Full-time",
+      "description": "Leading the design and deployment of production GenAI systems, including RAG pipelines, GraphRAG, agentic workflows, and AI-powered web platforms.",
+      "responsibilities": [
+        "Architecture decisions and system design",
+        "Model orchestration and evaluation",
+        "Cost and safety trade-offs",
+        "Cloud deployment and DevOps",
+        "Cross-team delivery coordination"
+      ],
+      "achievements": [
+        "Built multi-tenant RAG systems serving real production users",
+        "Implemented GraphRAG for complex knowledge retrieval",
+        "Designed agentic workflows with MCP-style orchestration"
+      ]
+    },
+    {
+      "role": "Freelance AI Engineer",
+      "period": "2024 – Present",
+      "type": "Independent",
+      "description": "Designing and delivering applied AI and GenAI systems alongside full-time work.",
+      "focus_areas": [
+        "Conversational AI assistants",
+        "Retrieval-augmented pipelines",
+        "Agentic workflows",
+        "Email automation and tracking systems",
+        "Database query systems with NLP"
+      ]
+    },
+    {
+      "role": "Senior Software Engineer",
+      "company": "Accenture",
+      "period": "2019–2022",
+      "type": "Full-time",
+      "description": "Built and deployed production backend and ML systems using Python and cloud-native architectures.",
+      "responsibilities": [
+        "Led API development initiatives",
+        "Designed CI/CD automation pipelines",
+        "Executed cloud migration projects",
+        "Cross-functional team collaboration"
+      ]
+    }
+  ],
+  "skills": {
+    "ai_ml": {
+      "llms_genai": ["OpenAI GPT-4/GPT-4o", "Claude", "Llama", "Groq", "Mistral"],
+      "frameworks": ["LangChain", "LangGraph", "LlamaIndex", "Hugging Face"],
+      "techniques": ["RAG", "GraphRAG", "Multi-Agent Systems", "Tool Calling", "Agent Routing", "Prompt Engineering"],
+      "vector_databases": ["FAISS", "Pinecone", "Chroma", "Weaviate"],
+      "graph_databases": ["Neo4j"],
+      "ml_classical": ["scikit-learn", "Gradient Boosting", "Classification", "Regression"],
+      "evaluation": ["MLflow", "LangSmith", "Prompt Evaluation", "Drift Monitoring"]
+    },
+    "development": {
+      "languages": ["Python", "JavaScript", "TypeScript", "SQL"],
+      "backend": ["FastAPI", "Flask", "Django", "Node.js"],
+      "frontend": ["React", "Next.js", "HTML/CSS", "Tailwind"],
+      "databases": ["PostgreSQL", "MySQL", "MongoDB", "Redis"]
+    },
+    "cloud_devops": {
+      "platforms": ["AWS", "Azure", "GCP"],
+      "aws_services": ["EKS", "EC2", "Lambda", "S3", "API Gateway", "CloudWatch"],
+      "azure_services": ["App Services", "Cosmos DB", "Blob Storage", "Azure Monitor"],
+      "containerization": ["Docker", "Kubernetes", "Helm"],
+      "infrastructure": ["Terraform", "GitHub Actions", "Jenkins"],
+      "security": ["IAM", "RBAC", "Secrets Management"]
+    },
+    "research": {
+      "areas": ["Human-AI Interaction", "Trust Calibration", "Explainable AI", "AI Safety", "Autonomy Boundaries"],
+      "methods": ["Interaction Log Analysis", "User Studies", "Qualitative Evaluation", "Behavioral Analysis"]
+    }
+  },
+  "research_interests": {
+    "primary": "Human-AI Interaction (HAI)",
+    "focus_areas": [
+      {
+        "area": "Trust Calibration in AI Systems",
+        "description": "Understanding how users develop appropriate levels of trust in AI outputs and how to design systems that support accurate trust calibration"
+      },
+      {
+        "area": "Autonomy Boundaries",
+        "description": "Researching the optimal balance between AI autonomy and human control in decision-making systems"
+      },
+      {
+        "area": "Explainable AI (XAI)",
+        "description": "Designing explanations that are genuinely useful for human understanding and decision-making"
+      },
+      {
+        "area": "Agentic AI Systems",
+        "description": "Building multi-agent systems with appropriate safety constraints and human oversight"
+      },
+      {
+        "area": "AI for Education and Mental Health",
+        "description": "Applying AI responsibly in high-stakes domains where safety is paramount"
+      }
+    ],
+    "phd_aspiration": "Actively pursuing PhD positions in Human-AI Interaction and Learning programs, with a focus on trust, safety, and human control in AI systems"
+  },
+  "projects": [
+    {
+      "name": "DeepGrade AI",
+      "category": "AI + Education",
+      "tagline": "AI-Assisted Learning & Assessment Platform",
+      "description": "AI-assisted grading platform with human-in-the-loop controls, trust calibration, and explanation design research. The system applies LLMs to evaluate student responses while keeping humans in control of final decisions.",
+      "technologies": ["Python", "Flask/FastAPI", "LLMs", "MCP Backend", "OCR Pipelines", "Azure", "CI/CD"],
+      "research_contributions": [
+        "Studied robustness across diverse handwriting styles and linguistic backgrounds",
+        "Identified over-trust issues with fluent AI explanations",
+        "Redesigned explanation formats and interaction flows",
+        "Introduced human-in-the-loop safeguards"
+      ],
+      "impact": "Informed research interest in mixed-initiative interaction and autonomy boundaries"
+    },
+    {
+      "name": "LLM Assistants & Agentic Systems",
+      "category": "Agentic AI",
+      "tagline": "Conversational, Educational & RAG-Based AI Systems",
+      "description": "Multiple LLM-powered assistants combining RAG with multi-step reasoning and agentic control flows using MCP-based orchestration.",
+      "technologies": ["OpenAI", "Claude API", "LangChain", "RAG Pipelines", "MCP Orchestration", "FastAPI"],
+      "research_focus": [
+        "Dialogue log analysis for engagement patterns",
+        "Scaffolding and hint-based response strategies",
+        "Evaluation pipelines for relevance and hallucination detection"
+      ]
+    },
+    {
+      "name": "Mental Health Prediction System",
+      "category": "Healthcare AI",
+      "tagline": "MSc Dissertation - Safety-Critical ML System",
+      "description": "Full-stack mental-health prediction system with safety-critical design, staged feedback mechanisms, and trust calibration research.",
+      "technologies": ["Python", "Django", "scikit-learn", "Gradient Boosting", "MLflow"],
+      "research_contributions": [
+        "Trust calibration through confidence cues and linguistic framing",
+        "Failure mode identification where explanations masked uncertainty",
+        "Staged feedback mechanisms with clinician verification",
+        "Human-in-the-loop controls for safe AI reliance"
+      ],
+      "impact": "Foundation for HAI research direction"
+    },
+    {
+      "name": "ConnectCircle",
+      "category": "Social Platform",
+      "tagline": "Privacy-First Social Media Platform",
+      "description": "Next-generation social media with enterprise-grade security, 24/7 admin control, and privacy-by-default design.",
+      "technologies": ["Python", "Flask", "MySQL", "PostgreSQL", "MCP Services"],
+      "features": [
+        "No forced algorithmic feed - user control over content",
+        "Privacy-first with mutual consent for identity reveal",
+        "Always-on moderation with report-anything system",
+        "Fine-grained privacy and deletion controls"
+      ]
+    },
+    {
+      "name": "Smartail AI Platform",
+      "category": "Enterprise AI",
+      "tagline": "Production GenAI Platform",
+      "description": "Multi-tenant production GenAI platform with RAG, GraphRAG, and AI assistants serving real enterprise teams.",
+      "technologies": ["Python", "FastAPI", "LangChain", "Neo4j", "Vector Databases", "AWS/Azure"],
+      "achievements": ["Real production deployment", "Multi-tenant architecture", "Enterprise security"]
+    }
+  ],
+  "engineering_principles": [
+    "Build AI systems that are grounded and explainable",
+    "Avoid hallucinations through retrieval and validation",
+    "Balance autonomy with human oversight",
+    "Design for real-world deployment, not demos",
+    "Prioritize cost-aware AI engineering",
+    "Implement safety as a foundation, not an afterthought"
+  ],
+  "personal": {
+    "values": [
+      {
+        "value": "Discipline & Consistency",
+        "description": "Never skip the gym, never skip the grind - discipline in one area fuels discipline everywhere"
+      },
+      {
+        "value": "Cultural Curiosity",
+        "description": "Deeply curious about different cultures and meaningful conversations"
+      },
+      {
+        "value": "Family First",
+        "description": "Family is the foundation that grounds everything"
+      },
+      {
+        "value": "Human Connection",
+        "description": "Naturally drawn to understanding what drives people emotionally"
+      },
+      {
+        "value": "Tech for Good",
+        "description": "Technology should serve people, help them grow, and make space for what truly matters"
+      }
+    ],
+    "fitness": "Committed fitness enthusiast who never skips the gym",
+    "belief": "One day, AI will handle most of our work. But even then, we'll need purpose beyond productivity. The goal is to build systems that free people to explore, create, and live fully—not systems that make us dependent or idle."
+  },
+  "conversation_starters": {
+    "about_work": ["Tell me about your current role", "What projects are you working on?", "What's your tech stack?"],
+    "about_research": ["What's your research focus?", "Tell me about Human-AI Interaction", "What are your PhD interests?"],
+    "about_projects": ["Tell me about DeepGrade", "What's the Mental Health project about?", "Explain your AI assistants work"],
+    "about_skills": ["What technologies do you work with?", "What's your experience with LLMs?", "Tell me about your cloud experience"],
+    "about_personal": ["What drives you?", "Tell me about your values", "What do you do outside of work?"],
+    "hiring": ["Are you available for work?", "What roles are you looking for?", "How can I contact you?"]
+  },
+  "faqs": {
+    "availability": "I'm currently open to AI Engineering roles, Research positions (including PhD), and collaborative projects in Human-AI Interaction.",
+    "location": "Based in the United Kingdom, originally from India. Open to remote work, relocation, and hybrid arrangements.",
+    "experience_level": "4+ years of professional experience spanning enterprise software at Accenture and AI/ML engineering at Smartail UK.",
+    "education": "MSc in Computer Science from Coventry University (2024) with a focus on AI/ML, and BTech in IT from India.",
+    "tech_focus": "Specializing in GenAI, LLMs, RAG systems, multi-agent workflows, and production ML systems with a strong emphasis on human-AI interaction.",
+    "research_direction": "Pursuing research in Human-AI Interaction, specifically trust calibration, autonomy boundaries, and explainable AI in decision-support systems."
+  }
+}

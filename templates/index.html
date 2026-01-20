@@ -1,0 +1,372 @@
+{% extends "base.html" %}
+
+{% block title %}Vishwanath Rajasekaran | GenAI & Agentic AI Engineer{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-bg">
+        <div class="hero-gradient"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+    </div>
+    
+    <div class="hero-content">
+        <div class="hero-badge animate-fade-up">
+            <span class="badge-dot"></span>
+            <span>Available for AI Engineering Roles & Research Positions</span>
+        </div>
+        
+        <h1 class="hero-title animate-fade-up delay-1">
+            <span class="hero-greeting">Hello, I'm</span>
+            <span class="hero-name">Vishwanath<br>Rajasekaran</span>
+        </h1>
+        
+        <div class="hero-role animate-fade-up delay-2">
+            <span class="role-line"></span>
+            <span class="role-text">GenAI & Agentic AI Engineer</span>
+            <span class="role-separator">•</span>
+            <span class="role-text">Python Full-Stack Developer</span>
+        </div>
+        
+        <p class="hero-description animate-fade-up delay-3">
+            Building production-grade intelligent systems with <em>human control</em>, 
+            <em>safety</em>, and <em>trust</em> at the core. Specialising in LLM-powered 
+            applications, multi-agent workflows, and human-AI interaction research.
+        </p>
+        
+        <div class="hero-actions animate-fade-up delay-4">
+            <a href="/projects" class="btn btn-primary">
+                <span>View My Work</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+            <a href="/contact" class="btn btn-secondary">
+                <span>Get in Touch</span>
+            </a>
+        </div>
+        
+        <div class="hero-stats animate-fade-up delay-5">
+            <div class="stat">
+                <span class="stat-number" data-count="4">0</span>
+                <span class="stat-label">Major Projects</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-number" data-count="10">0</span>
+                <span class="stat-label">Production Systems</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-number">MSc</span>
+                <span class="stat-label">Applied AI Research</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="hero-visual animate-fade-left delay-3">
+        <div class="profile-frame">
+            <div class="profile-glow"></div>
+            <div class="profile-border"></div>
+            <img src="{{ url_for('static', filename='images/profile.jpeg') }}" 
+                 alt="Vishwanath Rajasekaran" 
+                 class="profile-image"
+                 onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 400%22><rect fill=%22%230a0a0a%22 width=%22400%22 height=%22400%22/><text fill=%22%2300ff88%22 font-family=%22monospace%22 font-size=%2280%22 x=%22150%22 y=%22220%22>VR</text></svg>'">
+            <div class="profile-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>Verified Engineer</span>
+            </div>
+        </div>
+        
+        <div class="floating-cards">
+            <div class="float-card float-card-1">
+                <span class="card-icon">🤖</span>
+                <span class="card-text">LLM Systems</span>
+            </div>
+            <div class="float-card float-card-2">
+                <span class="card-icon">🔬</span>
+                <span class="card-text">HAI Research</span>
+            </div>
+            <div class="float-card float-card-3">
+                <span class="card-icon">🛡️</span>
+                <span class="card-text">AI Safety</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="hero-scroll">
+        <span>Scroll to explore</span>
+        <div class="scroll-indicator">
+            <div class="scroll-dot"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Expertise Section -->
+<section class="expertise-section">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-tag">What I Do</span>
+            <h2 class="section-title">Core Expertise</h2>
+            <p class="section-subtitle">Bridging cutting-edge AI with human-centered design</p>
+        </div>
+        
+        <div class="expertise-grid">
+            <div class="expertise-card">
+                <div class="expertise-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <h3>GenAI & Agentic Systems</h3>
+                <p>Production LLM systems with OpenAI, Claude, and Llama. Multi-agent coordination, RAG architectures, and MCP-style orchestration for controlled AI systems.</p>
+                <ul class="expertise-tags">
+                    <li>LangChain</li>
+                    <li>LangGraph</li>
+                    <li>RAG</li>
+                    <li>GraphRAG</li>
+                    <li>MCP</li>
+                    <li>Multi-Agent Workflows</li>
+                    <li>Tool Calling</li>
+                    <li>Agent Routing</li>
+                    <li>Embeddings & Vector Search</li>
+                    <li>Knowledge Graph Integration</li>
+                    <li>Guardrails & Constraints</li>
+                    <li>Observability & Tracing</li>
+                </ul>
+            </div>
+            
+            <div class="expertise-card">
+                <div class="expertise-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+                    </svg>
+                </div>
+                <h3>Human-AI Interaction Research</h3>
+                <p>Trust calibration, autonomy boundaries, and explainability. Interaction-log analysis, failure-mode detection, and safety-aware system design.</p>
+                <ul class="expertise-tags">
+                    <li>Human–AI Interaction (HAI)</li>
+                    <li>Trust Calibration</li>
+                    <li>Human-in-the-Loop (HITL)</li>
+                    <li>Oversight & Control</li>
+                    <li>Explainable AI (XAI)</li>
+                    <li>Uncertainty Signalling</li>
+                    <li>Interaction Log Analysis</li>
+                    <li>Failure Mode Analysis</li>
+                    <li>Safety-by-Design</li>
+                </ul>
+            </div>
+            
+            <div class="expertise-card">
+                <div class="expertise-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <h3>Full-Stack Development</h3>
+                <p>End-to-end ownership from architecture to deployment. Flask, FastAPI, Django backends with React/Next.js frontends and AI integration.</p>
+                <ul class="expertise-tags">
+                        <li>Python</li>
+                        <li>Flask</li>
+                        <li>FastAPI</li>
+                        <li>Django</li>
+                        <li>React</li>
+                        <li>Next.js</li>
+                        <li>JavaScript / TypeScript</li>
+                        <li>REST APIs</li>
+                        <li>GraphQL</li>
+                        <li>PostgreSQL</li>
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                        <li>Graph DBs</li>
+                        <li>Vector Databases</li>
+                        <li>Authentication & Authorisation</li>
+                </ul>
+            </div>
+            
+            <div class="expertise-card">
+                <div class="expertise-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                        <line x1="12" y1="22.08" x2="12" y2="12"/>
+                    </svg>
+                </div>
+                <h3>Cloud & DevOps</h3>
+                <p>AWS and Azure deployments with Docker, Kubernetes, and Terraform. CI/CD automation, observability, and secure infrastructure management.</p>
+                <ul class="expertise-tags">
+                        <li>AWS</li>
+                        <li>Azure</li>
+                        <li>Docker</li>
+                        <li>Kubernetes</li>
+                        <li>EKS / AKS</li>
+                        <li>Helm</li>
+                        <li>Terraform</li>
+                        <li>GitHub Actions</li>
+                        <li>Jenkins</li>
+                        <li>CI/CD Pipelines</li>
+                        <li>CloudWatch</li>
+                        <li>Azure Monitor</li>
+                        <li>IAM & RBAC</li>
+                        <li>Secrets Management</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects Preview -->
+<section class="featured-section">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-tag">Selected Work</span>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Systems built with human control and safety at the core</p>
+        </div>
+        
+        <div class="featured-grid">
+            <a href="/projects#deepgrade" class="featured-card featured-card-large">
+                <div class="featured-bg"></div>
+                <div class="featured-content">
+                    <span class="featured-tag">AI + Education</span>
+                    <h3>DeepGrade AI</h3>
+                    <p>AI-assisted grading platform with human-in-the-loop controls, trust calibration, and explanation design research.</p>
+                    <div class="featured-tech">
+                        <span>Python</span>
+                        <span>LLMs</span>
+                        <span>MCP</span>
+                        <span>Azure</span>
+                    </div>
+                    <span class="featured-link">
+                        Explore Project
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </span>
+                </div>
+            </a>
+            
+            <a href="/projects#mentalhealth" class="featured-card">
+                <div class="featured-bg"></div>
+                <div class="featured-content">
+                    <span class="featured-tag">Healthcare AI</span>
+                    <h3>Mental-Health Prediction</h3>
+                    <p>Safety-critical ML platform with staged feedback and trust calibration.</p>
+                    <span class="featured-link">
+                        View Details
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </span>
+                </div>
+            </a>
+            
+            <a href="/projects#connectcircle" class="featured-card">
+                <div class="featured-bg"></div>
+                <div class="featured-content">
+                    <span class="featured-tag">Social Platform</span>
+                    <h3>ConnectCircle</h3>
+                    <p>Privacy-first social media with 24/7 moderation and user control.</p>
+                    <span class="featured-link">
+                        View Details
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="section-action">
+            <a href="/projects" class="btn btn-outline">
+                <span>View All Projects</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="tech-section">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-tag">Technologies</span>
+            <h2 class="section-title">Tech Stack</h2>
+        </div>
+        
+        <div class="tech-marquee">
+            <div class="tech-track">
+                <div class="tech-item">Python</div>
+                <div class="tech-item">OpenAI</div>
+                <div class="tech-item">Claude</div>
+                <div class="tech-item">LangChain</div>
+                <div class="tech-item">FastAPI</div>
+                <div class="tech-item">Flask</div>
+                <div class="tech-item">React</div>
+                <div class="tech-item">Next.js</div>
+                <div class="tech-item">PostgreSQL</div>
+                <div class="tech-item">Neo4j</div>
+                <div class="tech-item">FAISS</div>
+                <div class="tech-item">Pinecone</div>
+                <div class="tech-item">AWS</div>
+                <div class="tech-item">Azure</div>
+                <div class="tech-item">Docker</div>
+                <div class="tech-item">Kubernetes</div>
+                <!-- Duplicate for seamless loop -->
+                <div class="tech-item">Python</div>
+                <div class="tech-item">OpenAI</div>
+                <div class="tech-item">Claude</div>
+                <div class="tech-item">LangChain</div>
+                <div class="tech-item">FastAPI</div>
+                <div class="tech-item">Flask</div>
+                <div class="tech-item">React</div>
+                <div class="tech-item">Next.js</div>
+                <div class="tech-item">PostgreSQL</div>
+                <div class="tech-item">Neo4j</div>
+                <div class="tech-item">FAISS</div>
+                <div class="tech-item">Pinecone</div>
+                <div class="tech-item">AWS</div>
+                <div class="tech-item">Azure</div>
+                <div class="tech-item">Docker</div>
+                <div class="tech-item">Kubernetes</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="cta-bg">
+        <div class="cta-gradient"></div>
+        <div class="cta-grid"></div>
+    </div>
+    <div class="section-container">
+        <div class="cta-content">
+            <h2 class="cta-title">Let's Build Something<br><span>Intelligent Together</span></h2>
+            <p class="cta-text">Looking for a GenAI engineer who understands both the technical depth and human factors? Let's discuss your next project.</p>
+            <div class="cta-actions">
+                <a href="/contact" class="btn btn-primary btn-large">
+                    <span>Start a Conversation</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="mailto:vishrajasek@gmail.com" class="btn btn-ghost">
+                    <span>vishrajasek@gmail.com</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

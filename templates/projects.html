@@ -1,0 +1,337 @@
+{% extends "base.html" %}
+
+{% block title %}Projects | Vishwanath Rajasekaran{% endblock %}
+
+{% block content %}
+<!-- Projects Hero -->
+<section class="projects-hero">
+    <div class="hero-bg">
+        <div class="hero-gradient"></div>
+        <div class="hero-grid"></div>
+    </div>
+    
+    <div class="section-container">
+        <span class="section-tag animate-fade-up">Portfolio</span>
+        <h1 class="projects-title animate-fade-up delay-1">
+            Selected <span class="gradient-text">Projects</span>
+        </h1>
+        <p class="projects-subtitle animate-fade-up delay-2">
+            Production systems built with human control, safety, and trust at the core. 
+            Each project represents end-to-end ownership from architecture through deployment.
+        </p>
+    </div>
+</section>
+
+<!-- Projects Grid -->
+<section class="projects-section">
+    <div class="section-container">
+        <!-- DeepGrade AI -->
+        <article class="project-detail" id="deepgrade">
+            <div class="project-header">
+                <div class="project-meta">
+                    <span class="project-number">01</span>
+                    <span class="project-category">AI + Education</span>
+                </div>
+                <h2 class="project-title">DeepGrade AI</h2>
+                <p class="project-tagline">AI-Assisted Learning & Assessment Platform</p>
+            </div>
+            
+            <div class="project-content">
+                <div class="project-description">
+                    <p>
+                        DeepGrade AI is an AI-assisted grading and feedback platform designed to support 
+                        students, teachers, and administrators in educational assessment workflows. The 
+                        system applies large language models to evaluate handwritten and structured student 
+                        responses against defined rubrics, generating scores and explanations while keeping 
+                        humans firmly in control of final decisions.
+                    </p>
+                    <p>
+                        Operating in a multi-role environment, AI outputs are advisory rather than 
+                        authoritative, ensuring alignment with real-world educational practices. A core 
+                        focus was understanding how users interpret AI-generated feedback through 
+                        interaction-log analysis and qualitative evaluation.
+                    </p>
+                    
+                    <div class="project-highlights">
+                        <h3>Key Research Contributions</h3>
+                        <ul>
+                            <li>Studied system across diverse handwriting styles, linguistic backgrounds, and answer structures to identify robustness issues</li>
+                            <li>Identified cases where fluent AI explanations led to over-trust or delayed human intervention</li>
+                            <li>Iteratively redesigned explanation formats, feedback timing, and interaction flows to improve interpretability</li>
+                            <li>Introduced human-in-the-loop safeguards including teacher overrides, editable criteria, and inspection controls</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-impact">
+                        <h3>Research Impact</h3>
+                        <p>
+                            This project directly informed research interest in mixed-initiative interaction, 
+                            demonstrating how explanation design and autonomy boundaries shape human control, 
+                            trust, and safety in AI-supported decision-making.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="project-sidebar">
+                    <div class="tech-stack">
+                        <h4>Technologies</h4>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>Flask/FastAPI</span>
+                            <span>LLMs</span>
+                            <span>MCP Backend</span>
+                            <span>OCR Pipelines</span>
+                            <span>Azure</span>
+                            <span>CI/CD</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-methods">
+                        <h4>Methods</h4>
+                        <ul>
+                            <li>Structured rubric-based prompting</li>
+                            <li>Interaction logging & qualitative analysis</li>
+                            <li>Explanation-format experimentation</li>
+                            <li>Human-in-the-loop controls</li>
+                            <li>Role-based UI design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+        <!-- LLM Assistants -->
+        <article class="project-detail" id="llm-assistants">
+            <div class="project-header">
+                <div class="project-meta">
+                    <span class="project-number">02</span>
+                    <span class="project-category">Agentic AI</span>
+                </div>
+                <h2 class="project-title">LLM Assistants & Agentic Systems</h2>
+                <p class="project-tagline">Conversational, Educational & RAG-Based AI Systems</p>
+            </div>
+            
+            <div class="project-content">
+                <div class="project-description">
+                    <p>
+                        Designed and built multiple LLM-powered assistants for conversational search, 
+                        learning support, and problem-solving, combining retrieval-augmented generation 
+                        with multi-step reasoning and agentic control flows. Used an MCP-based orchestration 
+                        layer to manage tools, context, and memory across assistants.
+                    </p>
+                    <p>
+                        These systems integrated structured knowledge sources with LLMs to provide grounded 
+                        responses while supporting follow-up questioning, exploration, and clarification 
+                        rather than one-shot answers. Several assistants were deployed in real usage contexts, 
+                        while others served as experimental platforms for interaction research.
+                    </p>
+                    
+                    <div class="project-highlights">
+                        <h3>Research Focus</h3>
+                        <ul>
+                            <li>Analysed how users engage with AI assistants over time through dialogue log examination</li>
+                            <li>Studied engagement patterns, challenge behaviour, reliance dynamics</li>
+                            <li>Experimented with scaffolding, hint-based responses, and stepwise reasoning strategies</li>
+                            <li>Built evaluation pipelines for relevance, consistency, and hallucination behaviour</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-impact">
+                        <h3>Key Outcomes</h3>
+                        <p>
+                            Deepened understanding of how conversational structure, autonomy cues, and 
+                            retrieval grounding influence user trust, error detection, and robustness 
+                            in interactive AI systems.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="project-sidebar">
+                    <div class="tech-stack">
+                        <h4>Technologies</h4>
+                        <div class="tech-tags">
+                            <span>OpenAI</span>
+                            <span>Claude</span>
+                            <span>Llama 3</span>
+                            <span>LangChain</span>
+                            <span>LangGraph</span>
+                            <span>MCP Server</span>
+                            <span>RAG</span>
+                            <span>GraphRAG</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-methods">
+                        <h4>Data Systems</h4>
+                        <ul>
+                            <li>FAISS, Pinecone, ChromaDB</li>
+                            <li>Neo4j Graph Database</li>
+                            <li>FastAPI/Flask Backends</li>
+                            <li>React/Next.js Frontends</li>
+                            <li>AWS/Azure Deployment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Mental Health Platform -->
+        <article class="project-detail" id="mentalhealth">
+            <div class="project-header">
+                <div class="project-meta">
+                    <span class="project-number">03</span>
+                    <span class="project-category">Healthcare AI</span>
+                </div>
+                <h2 class="project-title">Mental-Health AI Prediction Platform</h2>
+                <p class="project-tagline">MSc Dissertation — Safety-Critical ML System</p>
+            </div>
+            
+            <div class="project-content">
+                <div class="project-description">
+                    <p>
+                        Design and implementation of a full-stack mental-health prediction system 
+                        integrating a machine-learning model with a user-centred interface for patients, 
+                        clinicians, and administrators. Operating in a safety-critical domain, the platform 
+                        provided predictive insights while explicitly avoiding full automation.
+                    </p>
+                    <p>
+                        The system architecture prioritised transparency, staged feedback, and role-aware 
+                        information access, ensuring AI outputs supported—rather than replaced—clinical judgement.
+                    </p>
+                    
+                    <div class="project-highlights">
+                        <h3>Research Contributions</h3>
+                        <ul>
+                            <li>Studied how confidence cues, linguistic framing, and presentation formats influenced trust calibration</li>
+                            <li>Identified failure modes where fluent explanations masked uncertainty or misclassification</li>
+                            <li>Designed staged feedback mechanisms with clinician-verified reports</li>
+                            <li>Embedded human-in-the-loop controls to prevent unsafe reliance</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-impact">
+                        <h3>Foundation for HAI Research</h3>
+                        <p>
+                            This dissertation formed a strong foundation for research direction in Human–AI 
+                            Interaction, demonstrating how interaction design directly shapes trust, situational 
+                            awareness, and safety in high-stakes AI systems.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="project-sidebar">
+                    <div class="tech-stack">
+                        <h4>Technologies</h4>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>scikit-learn</span>
+                            <span>Gradient Boosting</span>
+                            <span>MLflow</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-methods">
+                        <h4>Methods</h4>
+                        <ul>
+                            <li>Applied ML experimentation</li>
+                            <li>Drift monitoring</li>
+                            <li>Trust-calibration experiments</li>
+                            <li>User studies & behavioural evaluation</li>
+                            <li>Responsible AI design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+        <!-- ConnectCircle -->
+        <article class="project-detail" id="connectcircle">
+            <div class="project-header">
+                <div class="project-meta">
+                    <span class="project-number">04</span>
+                    <span class="project-category">Social Platform</span>
+                </div>
+                <h2 class="project-title">ConnectCircle</h2>
+                <p class="project-tagline">Privacy-First Social Media Platform</p>
+            </div>
+            
+            <div class="project-content">
+                <div class="project-description">
+                    <p>
+                        ConnectCircle is a next-generation social media platform built around a global 
+                        chat system with enterprise-grade security and 24/7 admin control. Unlike traditional 
+                        platforms, every interaction can be monitored and reported through global safety 
+                        windows that enable continuous moderation, abuse prevention, and real-time intervention.
+                    </p>
+                    <p>
+                        Privacy is not optional—it's the default. Users can participate in global chat, but 
+                        private messaging is restricted to friends, and only mutually revealed friends can 
+                        view each other's posts. Identity and content access are unlocked strictly through 
+                        explicit, mutual consent.
+                    </p>
+                    
+                    <div class="project-highlights">
+                        <h3>Platform Innovations</h3>
+                        <ul>
+                            <li>No forced algorithmic feed—users decide exactly what they want to see</li>
+                            <li>Full contributor control over inbox chats and conversation history</li>
+                            <li>Always-on admin support with report-anything moderation</li>
+                            <li>Fine-grained privacy, blocking, and deletion logic across all features</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-impact">
+                        <h3>Design Philosophy</h3>
+                        <p>
+                            Creates a safer, quieter, and more intentional social environment—designed 
+                            for control rather than noise, with optional AI services for moderation 
+                            support and reporting triage.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="project-sidebar">
+                    <div class="tech-stack">
+                        <h4>Technologies</h4>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>MySQL</span>
+                            <span>PostgreSQL</span>
+                            <span>MCP Services</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-methods">
+                        <h4>Features</h4>
+                        <ul>
+                            <li>Session-based authentication</li>
+                            <li>Email verification</li>
+                            <li>Role-based access control</li>
+                            <li>Real-time chat workflows</li>
+                            <li>Audit-ready moderation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="projects-cta">
+    <div class="section-container">
+        <div class="projects-cta-content">
+            <h2>Have a Project in Mind?</h2>
+            <p>Let's discuss how I can help build intelligent systems with human control at the core.</p>
+            <a href="/contact" class="btn btn-primary">
+                <span>Start a Conversation</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

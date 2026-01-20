@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vishwanath Rajasekaran - GenAI & Agentic AI Engineer | Python Full-Stack Developer | Human-AI Interaction Researcher">
+    <meta name="keywords" content="AI Engineer, GenAI, LLM, Python Developer, Machine Learning, Human-AI Interaction">
+    <meta name="author" content="Vishwanath Rajasekaran">
+    <meta name="theme-color" content="#0a0a0b">
+    
+    <title>{% block title %}Vishwanath Rajasekaran | AI Engineer{% endblock %}</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- AI Assistant Chatbot Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot.css') }}">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="{{ url_for('static', filename='js/main.js') }}" as="script">
+    
+    {% block head %}{% endblock %}
+    
+    <!-- Initial theme script to prevent flash -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+    <!-- Cursor Effects -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+    
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-text">VR&nbsp;</span>
+                <span class="logo-dot"></span>
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a></li>
+                <li><a href="/about" class="nav-link {% if request.path == '/about' %}active{% endif %}">About</a></li>
+                <li><a href="/projects" class="nav-link {% if request.path == '/projects' %}active{% endif %}">Projects</a></li>
+                <li><a href="/contact" class="nav-link {% if request.path == '/contact' %}active{% endif %}">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-toggle-track"></span>
+                    <span class="theme-toggle-thumb">
+                        <svg class="theme-toggle-icon moon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                        <svg class="theme-toggle-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                    </span>
+                </button>
+                
+                <a href="/contact" class="nav-cta btn-magnetic">Let's Talk</a>
+                
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="/" class="mobile-link">Home</a>
+            <a href="/about" class="mobile-link">About</a>
+            <a href="/projects" class="mobile-link">Projects</a>
+            <a href="/contact" class="mobile-link">Contact</a>
+            <div style="margin-top: 2rem;">
+                <button class="theme-toggle" onclick="document.getElementById('themeToggle').click()" aria-label="Toggle theme">
+                    <span class="theme-toggle-track"></span>
+                    <span class="theme-toggle-thumb">
+                        <svg class="theme-toggle-icon moon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                        <svg class="theme-toggle-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo">
+                        <span class="logo-text">VR&nbsp;</span>
+                        <span class="logo-dot"></span>
+                    </a>
+                    <p class="footer-tagline">Building intelligent systems with humans at the center. GenAI Engineer focused on safety, trust, and human control.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <a href="/">Home</a>
+                    <a href="/about">About</a>
+                    <a href="/projects">Projects</a>
+                    <a href="/contact">Contact</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <a href="mailto:vishrajasek@gmail.com">Email</a>
+                    <a href="https://github.com/Rvishwanath19977" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.linkedin.com/in/vishwanath-rajasekaran/" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Get in Touch</h4>
+                    <p>vishrajasek@gmail.com</p>
+                    <p>+44 7384 089336</p>
+                    <p>+91 76677 71892</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vishwanath Rajasekaran. Crafted with precision & passion.</p>
+                <div class="footer-status">
+                    <span class="status-dot"></span>
+                    <span>Available for opportunities</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <!-- AI Assistant Chatbot -->
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

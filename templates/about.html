@@ -1,0 +1,436 @@
+{% extends "base.html" %}
+
+{% block title %}About | Vishwanath Rajasekaran{% endblock %}
+
+{% block content %}
+<!-- About Hero -->
+<section class="about-hero">
+    <div class="about-hero-bg">
+        <div class="hero-gradient"></div>
+        <div class="hero-grid"></div>
+    </div>
+    
+    <div class="section-container">
+        <div class="about-hero-content">
+            <div class="about-intro">
+                <span class="section-tag animate-fade-up">About Me</span>
+                <h1 class="about-title animate-fade-up delay-1">
+                    Engineering AI Systems<br>
+                    <span class="gradient-text">With Humans in Mind</span>
+                </h1>
+                <p class="about-lead animate-fade-up delay-2">
+                    I'm a GenAI and Agentic AI Engineer with a strong applied research orientation, 
+                    building production-grade intelligent systems where human control, safety, and 
+                    trust aren't afterthoughts—they're the foundation.
+                </p>
+            </div>
+            
+            <div class="about-image-wrapper animate-fade-left delay-3">
+                <div class="about-image-frame">
+                    <img src="{{ url_for('static', filename='images/profile3.jpeg') }}" 
+                         alt="Vishwanath Rajasekaran"
+                         onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 500%22><rect fill=%22%230a0a0a%22 width=%22400%22 height=%22500%22/><text fill=%22%2300ff88%22 font-family=%22monospace%22 font-size=%2260%22 x=%22150%22 y=%22270%22>VR</text></svg>'">
+                </div>
+                <div class="about-image-decoration"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Philosophy Section -->
+<section class="philosophy-section">
+    <div class="section-container">
+        <div class="philosophy-grid">
+            <div class="philosophy-text">
+                <h2>My Approach</h2>
+                <p>
+                    My work spans LLM-powered applications, retrieval-augmented and multi-agent workflows, 
+                    and end-to-end platforms—with hands-on ownership from system architecture and model 
+                    orchestration through deployment, evaluation, and continuous iteration in real environments.
+                </p>
+                <p>
+                    Across projects in education, mental-health decision support, social platforms, and 
+                    knowledge systems, I conduct applied research on interaction design, explanation structure, 
+                    autonomy boundaries, and user behaviour, using empirical analysis to inform system design.
+                </p>
+                <p>
+                    I prioritise <strong>cost-aware AI engineering</strong>, implementing model routing, caching, 
+                    and tiered inference strategies to balance quality, latency, and spend—delivering systems 
+                    that are scalable, auditable, economically sustainable, and built to work effectively 
+                    with humans, not around them.
+                </p>
+            </div>
+            
+            <div class="philosophy-values">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>Safety First</h3>
+                    <p>Building AI systems that fail gracefully and keep humans in control</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>Human-Centered</h3>
+                    <p>Designing interactions that calibrate trust and preserve autonomy</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Production-Ready</h3>
+                    <p>End-to-end systems that scale, audit, and operate reliably</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Beyond Code Section -->
+<section class="beyond-section">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-tag">Beyond Code</span>
+            <h2 class="section-title">Who I Am</h2>
+        </div>
+        
+        <div class="beyond-grid">
+            <div class="beyond-text">
+                <p class="beyond-lead">
+                    I believe technology should elevate humanity, not replace what makes us human.
+                </p>
+                <p>
+                    Outside of engineering AI systems, I'm a committed fitness enthusiast who never skips 
+                    the gym—discipline in one area fuels discipline everywhere. I'm deeply curious about 
+                    different cultures, love meaningful conversations, and find myself naturally drawn to 
+                    understanding what drives people emotionally.
+                </p>
+                <p>
+                    Family comes first, always. That grounding shapes how I think about building technology: 
+                    it should serve people, help them grow, and make space for what truly matters—pursuing 
+                    passions, connecting with loved ones, and spreading a little more kindness in the world.
+                </p>
+                <p>
+                    I carry a quiet conviction that one day, AI will handle most of our work. But even then, 
+                    we'll need purpose beyond productivity. My goal is to build systems that free people to 
+                    explore, create, and live fully—not systems that make us dependent or idle.
+                </p>
+            </div>
+            
+            <div class="beyond-values">
+                <div class="beyond-card">
+                    <div class="beyond-icon">💪</div>
+                    <div class="beyond-card-content">
+                        <h3>Discipline & Consistency</h3>
+                        <p>Never skip the gym, never skip the grind</p>
+                    </div>
+                </div>
+                
+                <div class="beyond-card">
+                    <div class="beyond-icon">🌍</div>
+                    <div class="beyond-card-content">
+                        <h3>Cultural Curiosity</h3>
+                        <p>Learning from every corner of the world</p>
+                    </div>
+                </div>
+                
+                <div class="beyond-card">
+                    <div class="beyond-icon">👨‍👩‍👧</div>
+                    <div class="beyond-card-content">
+                        <h3>Family First</h3>
+                        <p>The foundation that grounds everything</p>
+                    </div>
+                </div>
+                
+                <div class="beyond-card">
+                    <div class="beyond-icon">🤝</div>
+                    <div class="beyond-card-content">
+                        <h3>Human Connection</h3>
+                        <p>Understanding emotions, building bridges</p>
+                    </div>
+                </div>
+                
+                <div class="beyond-card">
+                    <div class="beyond-icon">🌱</div>
+                    <div class="beyond-card-content">
+                        <h3>Tech for Good</h3>
+                        <p>Making Earth a better place through innovation</p>
+                    </div>
+                </div>
+                
+                <div class="beyond-card">
+                    <div class="beyond-icon">✨</div>
+                    <div class="beyond-card-content">
+                        <h3>Purpose-Driven</h3>
+                        <p>Passion over productivity, always</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="skills-section">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-tag">Capabilities</span>
+            <h2 class="section-title">Technical Skills</h2>
+        </div>
+        
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>
+                    <span class="skill-icon">🤖</span>
+                    GenAI & Agentic AI
+                </h3>
+                <ul class="skill-list">
+                    <li>Production LLM Systems (OpenAI, Claude, Llama)</li>
+                    <li>Agentic Workflows & Multi-Agent Coordination</li>
+                    <li>Retrieval-Augmented Generation (RAG & GraphRAG)</li>
+                    <li>Context, Memory & State Management</li>
+                    <li>MCP-Style Orchestration</li>
+                    <li>Tool Invocation & Function Calling</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>
+                    <span class="skill-icon">🔬</span>
+                    Applied AI Research
+                </h3>
+                <ul class="skill-list">
+                    <li>Human–AI Interaction Analysis</li>
+                    <li>Trust Calibration & Autonomy Boundaries</li>
+                    <li>Explainability (XAI) & Transparency</li>
+                    <li>Interaction-Log Analysis</li>
+                    <li>Failure-Mode Analysis (Hallucination, Over-trust)</li>
+                    <li>Safety-Aware & HITL System Design</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>
+                    <span class="skill-icon">💰</span>
+                    Cost-Aware AI Engineering
+                </h3>
+                <ul class="skill-list">
+                    <li>Model Routing & Tiered Inference</li>
+                    <li>Caching & Fallback Strategies</li>
+                    <li>Throughput Optimisation</li>
+                    <li>LLM Cost Monitoring</li>
+                    <li>Budget-Aware Deployment</li>
+                    <li>Scaling Under Business Constraints</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>
+                    <span class="skill-icon">⚡</span>
+                    Full-Stack Development
+                </h3>
+                <ul class="skill-list">
+                    <li>Backend: Flask, FastAPI, Django</li>
+                    <li>Frontend: React, Next.js</li>
+                    <li>Languages: Python, JavaScript, TypeScript</li>
+                    <li>APIs: REST, GraphQL</li>
+                    <li>AI-Integrated Web Platforms</li>
+                    <li>End-to-End Ownership</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>
+                    <span class="skill-icon">🗄️</span>
+                    Knowledge & Data Systems
+                </h3>
+                <ul class="skill-list">
+                    <li>Vector DBs: FAISS, Pinecone, ChromaDB</li>
+                    <li>Graph DBs: Neo4j, Cosmos DB</li>
+                    <li>Relational: PostgreSQL, MySQL</li>
+                    <li>Document Databases (MongoDB)</li>
+                    <li>Schema-Aware Retrieval</li>
+                    <li>Structured Reasoning</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>
+                    <span class="skill-icon">☁️</span>
+                    Cloud & DevOps
+                </h3>
+                <ul class="skill-list">
+                    <li>AWS: EKS, EC2, Lambda, S3, API Gateway</li>
+                    <li>Azure: App Services, Cosmos DB, Blob</li>
+                    <li>Docker & Kubernetes (EKS/AKS)</li>
+                    <li>Terraform, Jenkins, GitHub Actions</li>
+                    <li>Cloud Monitoring: CloudWatch, Azure Monitor</li>
+                    <li>OSS Observability: Prometheus, Grafana</li>
+                    <li>IAM & RBAC, Secrets Management & Hardening</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>
+                    <span class="skill-icon">📊</span>
+                    ML & Evaluation
+                </h3>
+                <ul class="skill-list">
+                    <li>Classical ML (Gradient Boosting, Supervised)</li>
+                    <li>Experimentation & Tracking (MLflow)</li>
+                    <li>Output Quality & Drift Monitoring</li>
+                    <li>Prompt & Retrieval Evaluation</li>
+                    <li>Robustness Testing</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>
+                    <span class="skill-icon">🛡️</span>
+                    Trust, Safety & Governance
+                </h3>
+                <ul class="skill-list">
+                    <li>Responsible AI Design</li>
+                    <li>Privacy-First Architecture</li>
+                    <li>Role-Based Access Control</li>
+                    <li>Moderation Workflows</li>
+                    <li>Auditability & Logging</li>
+                    <li>Oversight Mechanisms</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>
+                    <span class="skill-icon">🧭</span>
+                    Engineering Leadership
+                </h3>
+                <ul class="skill-list">
+                    <li>Technical Decision Ownership & Trade-offs</li>
+                    <li>Architecture & Delivery Leadership</li>
+                    <li>Mentorship & Technical Guidance</li>
+                    <li>Roadmap Planning & Prioritisation</li>
+                    <li>Stakeholder & Cross-Team Collaboration</li>
+                    <li>Risk, Cost & Quality Accountability</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Education & Research -->
+<section class="education-section">
+    <div class="section-container">
+        <div class="section-header">
+            <span class="section-tag">Background</span>
+            <h2 class="section-title">Engineering & Research Journey</h2>
+        </div>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2024 — Present</span>
+                    <h3>Lead Full-Stack AI/ML Engineer</h3>
+                    <p class="timeline-org">Smartail UK</p>
+                    <p>
+                        Leading the design and delivery of production GenAI systems,
+                        including LLM-powered applications, RAG and GraphRAG pipelines,
+                        and agentic workflows. Owning architecture decisions, cost and
+                        safety trade-offs, cloud deployment, and cross-team delivery.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2024 — Present</span>
+                    <h3>Freelance & Independent AI Projects</h3>
+                    <p>
+                        Designing and delivering applied AI and GenAI systems alongside
+                        full-time work, including conversational assistants,
+                        retrieval-augmented pipelines, and agentic workflows, with
+                        emphasis on reliability, safety, and real-world usability.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2023 — Present</span>
+                    <h3>Human–AI Interaction Research Direction</h3>
+                    <p class="timeline-org">Industry-Aligned Research Focus</p>
+                    <p>
+                        Developing a research focus on human–AI interaction, trust
+                        calibration, autonomy boundaries, and explanation design,
+                        informed by MSc research and ongoing industry systems work.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2023–2024</span>
+                    <h3>MSc Dissertation — Mental-Health AI Prediction</h3>
+                    <p class="timeline-org">Coventry University, United Kingdom</p>
+                    <p>
+                        Designed and implemented a full-stack mental-health prediction
+                        system integrating machine learning with human-centred interface
+                        design. Studied how users interpret, trust, and act on AI
+                        predictions in high-sensitivity contexts.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2019–2022</span>
+                    <h3>Senior Software Engineer</h3>
+                    <p class="timeline-org">Accenture</p>
+                    <p>
+                        Built and deployed production backend and ML systems using
+                        Python and cloud-native architectures. Led API development,
+                        CI/CD automation, and cloud migration initiatives while
+                        collaborating closely with cross-functional teams.
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact CTA -->
+<section class="about-cta">
+    <div class="section-container">
+        <div class="about-cta-content">
+            <h2>Interested in Working Together?</h2>
+            <p>I'm open to AI engineering roles, research positions, and collaborative projects in human-AI interaction.</p>
+            <div class="about-cta-actions">
+                <a href="/contact" class="btn btn-primary">
+                    <span>Get in Touch</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="/projects" class="btn btn-outline">
+                    <span>View Projects</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
