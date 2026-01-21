@@ -1123,6 +1123,24 @@ body:hover .cursor-glow { opacity: 1; }
     50% { top: 24px; opacity: 0.3; }
 }
 
+@media (max-width: 768px) {
+    .hero-scroll {
+        position: absolute;
+        bottom: var(--space-lg);   /* 👈 creates inner gap */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        padding-bottom: calc(var(--space-4xl) + 50px);
+    }
+}
+
+
 /* ============================================
    ANIMATIONS
    ============================================ */
@@ -1475,6 +1493,12 @@ body:hover .cursor-glow { opacity: 1; }
 
 .featured-card:hover::before {
     opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .featured-card {
+        justify-content: flex-start;  /* 👈 FIX */
+    }
 }
 
 .featured-bg {
