@@ -4,22 +4,45 @@ Includes AI Assistant API endpoint
 """
 
 from flask import Flask, render_template, request, jsonify
-from flask_mail import Mail, Message
 import os
 import uuid
+import requests
+import smtplib
+from email.message import EmailMessage
 from chatbot import ask_bot
 
 app = Flask(__name__)
 
 # Email Configuration (Gmail SMTP)
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
-app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
-app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_USERNAME')
+def send_email_via_gmail(name, email, subject, message):
+    """Fallback Gmail SMTP sender"""
+    msg = EmailMessage()
+    msg["Subject"] = f"Portfolio Contact: {subject}"
+    msg["From"] = os.getenv("MAIL_USERNAME")
+    msg["To"] = "vishrajasek@gmail.com"
+    msg["Reply-To"] = email
 
-mail = Mail(app)
+    msg.set_content(f"""
+New message from your portfolio website:
+
+Name: {name}
+Email: {email}
+Subject: {subject}
+
+Message:
+{message}
+
+---
+Sent from Vishwanath's Portfolio
+""")
+
+    with smtplib.SMTP("smtp.gmail.com", 587, timeout=10) as server:
+        server.starttls()
+        server.login(
+            os.getenv("MAIL_USERNAME"),
+            os.getenv("MAIL_PASSWORD")
+        )
+        server.send_message(msg)
 
 
 @app.route("/")
@@ -80,43 +103,74 @@ def chat_api():
 
 @app.route("/send-message", methods=["POST"])
 def send_message():
-    """Contact form email endpoint"""
+    """Contact form email endpoint with Resend + Gmail fallback"""
     try:
         data = request.get_json()
+
         name = data.get('name')
         email = data.get('email')
         subject = data.get('subject', 'Portfolio Contact')
         message = data.get('message')
-        
+
         if not all([name, email, message]):
-            return jsonify({'success': False, 'message': 'Please fill in all required fields'}), 400
-        
-        msg = Message(
-            subject=f"Portfolio Contact: {subject}",
-            recipients=['vishrajasek@gmail.com'],
-            body=f"""
-New message from your portfolio website:
+            return jsonify({
+                'success': False,
+                'message': 'Please fill in all required fields'
+            }), 400
 
-Name: {name}
-Email: {email}
-Subject: {subject}
+        # -----------------------------
+        # 1️⃣ TRY RESEND FIRST
+        # -----------------------------
+        try:
+            response = requests.post(
+                "https://api.resend.com/emails",
+                headers={
+                    "Authorization": f"Bearer {os.getenv('RESEND_API_KEY')}",
+                    "Content-Type": "application/json"
+                },
+                json={
+                    "from": "Vish Portfolio <onboarding@resend.dev>",
+                    "to": ["vishrajasek@gmail.com"],
+                    "reply_to": email,
+                    "subject": f"Portfolio Contact: {subject}",
+                    "html": f"""
+                        <h3>New message from your portfolio</h3>
+                        <p><strong>Name:</strong> {name}</p>
+                        <p><strong>Email:</strong> {email}</p>
+                        <p><strong>Message:</strong></p>
+                        <p>{message}</p>
+                    """
+                },
+                timeout=10
+            )
 
-Message:
-{message}
+            if response.status_code == 200:
+                return jsonify({
+                    'success': True,
+                    'message': 'Message sent successfully!'
+                })
 
----
-Sent from Vishwanath's Portfolio
-            """,
-            reply_to=email
-        )
-        
-        mail.send(msg)
-        return jsonify({'success': True, 'message': 'Message sent successfully!'})
-    
+            raise Exception(response.text)
+
+        except Exception as resend_error:
+            print("[Resend Failed] Falling back to Gmail:", resend_error)
+
+        # -----------------------------
+        # 2️⃣ FALLBACK TO GMAIL SMTP
+        # -----------------------------
+        send_email_via_gmail(name, email, subject, message)
+
+        return jsonify({
+            'success': True,
+            'message': 'Message sent successfully!'
+        })
+
     except Exception as e:
-        print(f"[Email Error]: {e}")
-        return jsonify({'success': False, 'message': 'Failed to send message. Please try emailing directly.'}), 500
-
+        print("[Email Error]:", e)
+        return jsonify({
+            'success': False,
+            'message': 'Failed to send message. Please try again later.'
+        }), 500
 
 @app.errorhandler(404)
 def not_found(e):
