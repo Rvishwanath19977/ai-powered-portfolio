@@ -96,12 +96,31 @@ IDENTITY:
     if any(i in intents for i in ["about_skills", "clarification"]):
         skills = profile_data['skills']
         skills_text = f"""
-TECHNICAL SKILLS:
-- AI/ML: {', '.join(skills['ai_ml']['llms_genai'][:5])}
+TECHNICAL SKILLS [Use ONLY these - do not add any others]:
+
+AI/ML & GenAI:
+- LLMs: {', '.join(skills['ai_ml']['llms_genai'])}
 - Frameworks: {', '.join(skills['ai_ml']['frameworks'])}
-- Techniques: {', '.join(skills['ai_ml']['techniques'][:6])}
+- Techniques: {', '.join(skills['ai_ml']['techniques'])}
+- Vector DBs: {', '.join(skills['ai_ml']['vector_databases'])}
+- Graph DBs: {', '.join(skills['ai_ml']['graph_databases'])}
+- Classical ML: {', '.join(skills['ai_ml']['ml_classical'])}
+- Evaluation: {', '.join(skills['ai_ml']['evaluation'])}
+
+Development:
+- Languages: {', '.join(skills['development']['languages'])}
 - Backend: {', '.join(skills['development']['backend'])}
-- Cloud: {', '.join(skills['cloud_devops']['platforms'])}
+- Frontend: {', '.join(skills['development']['frontend'])}
+- Databases: {', '.join(skills['development']['databases'])}
+
+Cloud & DevOps:
+- Platforms: {', '.join(skills['cloud_devops']['platforms'])}
+- AWS: {', '.join(skills['cloud_devops']['aws_services'])}
+- Azure: {', '.join(skills['cloud_devops']['azure_services'])}
+- Containers: {', '.join(skills['cloud_devops']['containerization'])}
+- Infrastructure: {', '.join(skills['cloud_devops']['infrastructure'])}
+
+Research Areas: {', '.join(skills['research']['areas'])}
 """
         context_parts.append(skills_text)
     
@@ -180,9 +199,9 @@ COMMUNICATION STYLE:
 
 RESPONSE RULES:
 1. For questions about Vish (work, skills, projects, research, personal):
-   - Answer ONLY using the provided profile data
-   - If information isn't available, say: "I don't have that specific detail, but feel free to reach out directly to Vish!"
+   - Answer using the provided profile data
    - Be specific and cite actual projects, technologies, and experiences
+   - If information isn't available, say: "I don't have that specific detail, but feel free to reach out directly to Vish!"
 
 2. For greetings and casual conversation:
    - Be warm and welcoming
@@ -197,6 +216,9 @@ RESPONSE RULES:
    - Be warm and encouraging
    - Offer contact information if they haven't received it
    - Invite them to return
+
+IMPORTANT - FACTUAL ACCURACY:
+When discussing skills, technologies, or tools - ONLY mention items that are explicitly listed in the provided profile context. Do not add similar or related technologies that aren't in the list. If asked about a specific skill not in the profile, say you don't have that information.
 
 CRITICAL RULES:
 - NEVER invent or guess information not in the profile data
@@ -291,7 +313,7 @@ def generate_response(messages: List[Dict[str, str]]) -> str:
         response = groq_client.chat.completions.create(
             model=model_name,
             messages=messages,
-            temperature=0.7,
+            temperature=0.5,  # Balanced: warm but more factual than 0.7
             max_tokens=500,
             top_p=0.9
         )
@@ -310,7 +332,7 @@ def generate_response(messages: List[Dict[str, str]]) -> str:
             response = openai_client.chat.completions.create(
                 model=model_name,
                 messages=messages,
-                temperature=0.7,
+                temperature=0.5,
                 max_tokens=500
             )
 
