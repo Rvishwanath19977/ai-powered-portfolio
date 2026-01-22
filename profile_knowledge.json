@@ -25,7 +25,8 @@
     "secondary_title": "Python Full-Stack Developer",
     "research_focus": "Human-AI Interaction Researcher",
     "tagline": "Building intelligent systems with humans at the center",
-    "philosophy": "Technology should elevate humanity, not replace what makes us human"
+    "philosophy": "Technology should elevate humanity, not replace what makes us human",
+    "product_builder_identity": "Independent AI product builder and sole architect of multiple AI platforms, including Medvisor AI and ConnectCircle"
   },
   "background": {
     "summary": "I am a GenAI and full-stack AI/ML engineer with 7+ years of professional experience, having designed, built, and released 10+ production-grade intelligent systems. My work combines large language models, retrieval-augmented generation, agentic workflows, and cloud-native deployment, with a strong emphasis on safety, reliability, and human control.",
@@ -183,9 +184,10 @@
       ]
     },
     {
-      "name": "Mental Health Prediction System",
+      "name": "Medvisor AI",
       "category": "Healthcare AI",
       "tagline": "MSc Dissertation - Safety-Critical ML System",
+      "ownership": "Solo-built product — conceptualized, designed, engineered, and developed entirely by Vishwanath Rajasekaran",
       "description": "Full-stack mental-health prediction system with safety-critical design, staged feedback mechanisms, and trust calibration research.",
       "technologies": ["Python", "Django", "scikit-learn", "Gradient Boosting", "MLflow"],
       "research_contributions": [
@@ -200,6 +202,7 @@
       "name": "ConnectCircle",
       "category": "Social Platform",
       "tagline": "Privacy-First Social Media Platform",
+      "ownership": "Independent personal product fully designed and developed by Vishwanath Rajasekaran",
       "description": "Next-generation social media with enterprise-grade security, 24/7 admin control, and privacy-by-default design.",
       "technologies": ["Python", "Flask", "MySQL", "PostgreSQL", "MCP Services"],
       "features": [

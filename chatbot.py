@@ -1,5 +1,5 @@
 """
-Vishwanath's Personal AI Assistant - Enhanced Version
+Vishwanath's Personal AI Assistant - Enhanced Version with Product Ownership
 A charming, intelligent, and context-aware AI assistant
 """
 
@@ -49,7 +49,8 @@ INTENT_PATTERNS = {
     "greeting": r"\b(hi|hello|hey|greetings|good\s*(morning|afternoon|evening)|howdy|sup|what'?s\s*up)\b",
     "about_work": r"\b(work|job|role|position|company|career|employment|what\s*do\s*you\s*do|current\s*role)\b",
     "about_skills": r"\b(skills?|technologies|tech\s*stack|programming|languages?|frameworks?|tools?|expertise|capable|know)\b",
-    "about_projects": r"\b(projects?|portfolio|built|created|developed|work\s*on|deepgrade|mental\s*health|connectcircle|smartail)\b",
+    "about_projects": r"\b(projects?|portfolio|built|created|developed|work\s*on|deepgrade|mental\s*health|connectcircle|smartail|medvisor)\b",
+    "about_products": r"\b(own|product|products|built|created|independent|solo|personal\s*project|your\s*own)\b",
     "about_research": r"\b(research|phd|academic|study|human.?ai|interaction|trust|safety|explainable|xai)\b",
     "about_education": r"\b(education|degree|university|college|masters?|msc|btech|coventry|studied|dissertation)\b",
     "about_experience": r"\b(experience|years?|background|accenture|smartail|worked|history|journey)\b",
@@ -83,6 +84,7 @@ IDENTITY:
 - Name: {profile_data['name']} (goes by {profile_data['nickname']})
 - Current Role: {profile_data['current_status']['role']} at {profile_data['current_status']['company']}
 - Primary Identity: {profile_data['professional_identity']['primary_title']}
+- Also: {profile_data['professional_identity']['product_builder_identity']}
 - Research Focus: {profile_data['professional_identity']['research_focus']}
 - Philosophy: "{profile_data['professional_identity']['philosophy']}"
 
@@ -90,6 +92,27 @@ BACKGROUND SUMMARY:
 {profile_data['background']['summary']}
 - Total Experience: {profile_data['background']['total_experience_years']}+ years
 - Domains: {', '.join(profile_data['background']['domains_worked'])}
+""")
+    
+    # CRITICAL: Always include product ownership information prominently
+    context_parts.append("""
+=== VISH'S PERSONAL PRODUCTS (100% OWNED BY HIM) ===
+**IMPORTANT**: These are Vish's OWN products - he is the sole creator, architect, and owner:
+
+1. **Medvisor AI** (Mental Health Prediction Platform)
+   - Ownership: Solo-built product — conceptualized, designed, engineered, and developed entirely by Vishwanath Rajasekaran
+   - MSc dissertation project
+   - Full-stack mental-health prediction system
+   - Technologies: Python, Django, scikit-learn, Gradient Boosting, MLflow
+   - This is HIS product, HIS intellectual property
+
+2. **ConnectCircle** (Social Media Platform)
+   - Ownership: Independent personal product fully designed and developed by Vishwanath Rajasekaran
+   - Privacy-first social media platform
+   - Technologies: Python, Flask, MySQL, PostgreSQL, MCP Services
+   - This is HIS product, HIS intellectual property
+
+These two products are 100% owned by Vish. He conceived them, built them, and owns them completely.
 """)
     
     if any(i in intents for i in ["about_work", "about_experience", "clarification"]):
@@ -129,10 +152,15 @@ Research Areas: {', '.join(skills['research']['areas'])}
 """
         context_parts.append(skills_text)
     
-    if any(i in intents for i in ["about_projects", "clarification"]):
-        projects_text = "\nKEY PROJECTS:\n"
-        for proj in profile_data['projects'][:4]:
-            projects_text += f"- {proj['name']} ({proj['category']}): {proj['tagline']} - {proj['description'][:200]}...\n"
+    if any(i in intents for i in ["about_projects", "about_products", "clarification"]):
+        projects_text = "\nALL PROJECTS (with ownership details):\n"
+        for proj in profile_data['projects']:
+            ownership = proj.get('ownership', 'Work project')
+            projects_text += f"\n**{proj['name']}** ({proj['category']})\n"
+            projects_text += f"   Ownership: {ownership}\n"
+            projects_text += f"   Tagline: {proj['tagline']}\n"
+            projects_text += f"   Description: {proj['description']}\n"
+            projects_text += f"   Technologies: {', '.join(proj['technologies'])}\n"
         context_parts.append(projects_text)
     
     if any(i in intents for i in ["about_research", "clarification"]):
@@ -202,22 +230,35 @@ COMMUNICATION STYLE:
 - Occasionally use first-person perspective as if channeling Vish's voice when appropriate
 - Add subtle personality touches: "That's a great question!", "I'm glad you asked about that"
 
+**CRITICAL - PRODUCT OWNERSHIP:**
+When asked about Vish's own products or what he owns:
+- Vish owns TWO personal products: **Medvisor AI** and **ConnectCircle**
+- Both are 100% his - he conceived, designed, built, and owns them completely
+- These are NOT work projects - they are his personal intellectual property
+- Be CLEAR and EMPHATIC about this ownership when asked
+- Say things like: "Yes! Vish owns two products: Medvisor AI and ConnectCircle. He built both from scratch."
+
 RESPONSE RULES:
 1. For questions about Vish (work, skills, projects, research, personal):
    - Answer using the provided profile data
    - Be specific and cite actual projects, technologies, and experiences
    - If information isn't available, say: "I don't have that specific detail, but feel free to reach out directly to Vish!"
 
-2. For greetings and casual conversation:
+2. For questions about ownership or "his own products":
+   - ALWAYS mention Medvisor AI and ConnectCircle as his personal products
+   - Emphasize that he built them independently and owns them completely
+   - Distinguish them from work projects like Smartail
+
+3. For greetings and casual conversation:
    - Be warm and welcoming
    - Introduce yourself and Vish briefly
    - Gently guide toward exploring his work or answering questions
 
-3. For capability questions ("what can you help with?"):
+4. For capability questions ("what can you help with?"):
    - Explain you can discuss Vish's work, projects, skills, research interests, and background
    - Offer specific suggestions based on what visitors typically ask
 
-4. For farewell messages:
+5. For farewell messages:
    - Be warm and encouraging
    - Offer contact information if they haven't received it
    - Invite them to return
@@ -318,7 +359,7 @@ def generate_response(messages: List[Dict[str, str]]) -> str:
         response = groq_client.chat.completions.create(
             model=model_name,
             messages=messages,
-            temperature=0.5,  # Balanced: warm but more factual than 0.7
+            temperature=0.5,
             max_tokens=500,
             top_p=0.9
         )
@@ -370,9 +411,14 @@ def generate_suggestions(intents: List[str]) -> List[str]:
             "What are his key projects?"
         ],
         "about_projects": [
+            "Which products does Vish own?",
             "Tell me about DeepGrade AI",
-            "What's his research in HAI?",
-            "Is he available for work?"
+            "What's his research in HAI?"
+        ],
+        "about_products": [
+            "Tell me about Medvisor AI",
+            "What is ConnectCircle?",
+            "What other projects has he built?"
         ],
         "about_research": [
             "Is he pursuing a PhD?",
@@ -391,7 +437,7 @@ def generate_suggestions(intents: List[str]) -> List[str]:
         ],
         "general": [
             "Tell me about Vish's work",
-            "What are his key projects?",
+            "Which products does he own?",
             "What's his research focus?"
         ]
     }
@@ -407,7 +453,7 @@ def get_quick_response(question: str) -> Optional[str]:
     question_lower = question.lower().strip()
     
     quick_responses = {
-        "hi": f"Hey there! 👋 I'm Vish's AI assistant. I can tell you about his work in GenAI, his research in Human-AI Interaction, or his projects. What would you like to know?",
+        "hi": f"Hey there! 👋 I'm Vish's AI assistant. I can tell you about his work in GenAI, his research in Human-AI Interaction, or his products. What would you like to know?",
         "hello": f"Hello! Welcome! I'm here to help you learn about Vishwanath's work, projects, and research. Feel free to ask me anything!",
         "who are you": f"I'm Vish's personal AI assistant! I can tell you all about his work as a GenAI Engineer, his research in Human-AI Interaction, his projects, and more. What interests you?",
         "what can you do": f"I can help you explore Vish's professional background, discuss his projects like DeepGrade AI, explain his research in Human-AI Interaction, share his tech stack, or provide contact information. What would you like to know?"
