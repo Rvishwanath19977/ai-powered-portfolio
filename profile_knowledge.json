@@ -28,8 +28,8 @@
     "philosophy": "Technology should elevate humanity, not replace what makes us human"
   },
   "background": {
-    "summary": "I am a GenAI and full-stack AI/ML engineer focused on building production-grade intelligent systems. My work combines large language models, retrieval-augmented generation, agentic workflows, and cloud-native deployment, with a strong emphasis on safety, reliability, and human control.",
-    "total_experience_years": 4,
+    "summary": "I am a GenAI and full-stack AI/ML engineer with 7+ years of professional experience, having designed, built, and released 10+ production-grade intelligent systems. My work combines large language models, retrieval-augmented generation, agentic workflows, and cloud-native deployment, with a strong emphasis on safety, reliability, and human control.",
+    "total_experience_years": 7,
     "domains_worked": ["Enterprise Software", "Education Technology", "Healthcare AI", "Social Platforms", "Knowledge Management Systems"]
   },
   "education": [
@@ -75,7 +75,7 @@
     },
     {
       "role": "Freelance AI Engineer",
-      "period": "2024 – Present",
+      "period": "2023 – Present",
       "type": "Independent",
       "description": "Designing and delivering applied AI and GenAI systems alongside full-time work.",
       "focus_areas": [
@@ -263,7 +263,7 @@
   "faqs": {
     "availability": "I'm currently open to AI Engineering roles, Research positions (including PhD), and collaborative projects in Human-AI Interaction.",
     "location": "Based in the United Kingdom, originally from India. Open to remote work, relocation, and hybrid arrangements.",
-    "experience_level": "4+ years of professional experience spanning enterprise software at Accenture and AI/ML engineering at Smartail UK.",
+    "experience_level": "7+ years of professional experience spanning enterprise software at Accenture and AI/ML engineering at Smartail UK.",
     "education": "MSc in Computer Science from Coventry University (2024) with a focus on AI/ML, and BTech in IT from India.",
     "tech_focus": "Specializing in GenAI, LLMs, RAG systems, multi-agent workflows, and production ML systems with a strong emphasis on human-AI interaction.",
     "research_direction": "Pursuing research in Human-AI Interaction, specifically trust calibration, autonomy boundaries, and explainable AI in decision-support systems."

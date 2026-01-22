@@ -77,7 +77,7 @@ def build_relevant_context(intents: List[str], message: str) -> str:
     """Build relevant context based on detected intents"""
     context_parts = []
     
-    # Always include basic identity
+    # Always include basic identity + background summary
     context_parts.append(f"""
 IDENTITY:
 - Name: {profile_data['name']} (goes by {profile_data['nickname']})
@@ -85,6 +85,11 @@ IDENTITY:
 - Primary Identity: {profile_data['professional_identity']['primary_title']}
 - Research Focus: {profile_data['professional_identity']['research_focus']}
 - Philosophy: "{profile_data['professional_identity']['philosophy']}"
+
+BACKGROUND SUMMARY:
+{profile_data['background']['summary']}
+- Total Experience: {profile_data['background']['total_experience_years']}+ years
+- Domains: {', '.join(profile_data['background']['domains_worked'])}
 """)
     
     if any(i in intents for i in ["about_work", "about_experience", "clarification"]):
